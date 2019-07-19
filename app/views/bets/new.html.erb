@@ -1,0 +1,25 @@
+<div class="container">
+  <br>
+  <%= form_for @bet do |f| %>
+  <div class="form-group">
+      <div class="form-group">
+        <%= f.label "小隊" %>
+        <%= f.select :team, ['ㄧ小', '二小', '三小', '四小', '五小', '六小', '七小', '八小', '九小', '十小'], {}, { :class => "custom-select" } %>
+      </div>
+      <div class="form-group">
+        <%= f.label "姓名" %>
+        <%= f.text_field :name, class: "form-control", placeholder: "中文全名" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "金額" %>
+        <%= f.number_field :money, class: "form-control", placeholder: "" %>
+      </div>
+      <% if @target %>
+        <%= f.hidden_field :participant_id, value: @target %>
+      <% end %>
+
+  </div>
+  <br>
+  <%= f.submit "下注", class: "btn-lg btn-primary", data: { disable_with: "下注中..." } %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="container records">
+  <%= link_to("返回", participants_path, class: "btn btn-warning")%>
+  <br>
+  <br>
+  <h1 class="h2 mb-3"># <%= @participant.id %> <%= @participant.name %> - 下注</h1>
+  <br>
+  <div class="table-responsive">
+    <table class="table">
+      <br>
+      <thead>
+        <tr>
+          <th scope="col">小隊</th>
+          <th scope="col">名字</th>
+          <th scope="col">金額</th>
+          <th scope="col">下注時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bets.each do |bet| %>
+          <tr>
+            <td><%= bet.team %></td>
+            <td><%= bet.name %></td>
+            <td><%= bet.money %> 元</td>
+            <td><%= bet.created_at.in_time_zone("Taipei") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
