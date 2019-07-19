@@ -15,6 +15,7 @@ gem 'mini_racer', platforms: :ruby
 gem 'administrate', '~> 0.10.0'
 gem 'awesome_rails_console'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'aasm'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
