@@ -2,7 +2,7 @@ class Participant < ApplicationRecord
   has_many :bets
 
   def sum_bets
-    bets.reduce(0) do |sum, bet|
+    bets.paid.reduce(0) do |sum, bet|
       sum += bet.money
     end
   end
@@ -12,7 +12,7 @@ class Participant < ApplicationRecord
   end
 
   def self.total_bets
-    Bet.all.reduce(0) do |sum, bet|
+    Bet.paid.reduce(0) do |sum, bet|
       sum += bet.money
     end
   end

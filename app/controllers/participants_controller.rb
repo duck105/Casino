@@ -13,7 +13,7 @@ class ParticipantsController < ApplicationController
 
   def show
     @participant = Participant.find(params[:id])
-    @bets = @participant.bets
+    @bets = @participant.bets.paid
   end
 
   private

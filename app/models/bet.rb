@@ -6,6 +6,10 @@ class Bet < ApplicationRecord
   validates :team, presence: true
   validates :money, presence: true
 
+  scope :paid, -> { where aasm_state: 'paid' }
+  scope :ongoing, -> { where aasm_state: ['paid','created'] }
+
+
   aasm do
     state :created, initial: true
     state :paid, :refunded #paid: 已付賭金, refunded: 已領回獎金
