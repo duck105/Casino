@@ -9,6 +9,13 @@ module Admin
     #     page(params[:page]).
     #     per(10)
     # end
+    def scoped_resource
+     if params[:win]
+       resource_class.where(participant_id: params[:win]).ongoing
+     else
+       resource_class.ongoing
+     end
+    end
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
