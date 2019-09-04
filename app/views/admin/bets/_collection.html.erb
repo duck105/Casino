@@ -72,7 +72,6 @@ to display a collection of resources in an HTML table.
             <% end -%>
           </td>
         <% end %>
-        <td><%= resource.participant.expected_profit(resource.money) %></td>
         <% if (valid_action? :pay, collection_presenter.resource_name) && resource.may_pay? %>
           <td><%= link_to("付款",
           pay_admin_bet_path(resource),
@@ -82,7 +81,7 @@ to display a collection of resources in an HTML table.
         <% end %>
         <% confirm_message = "確認是#{resource.participant.name}贏？領取獎金#{resource.participant.expected_profit(resource.money)}元" %>
         <% if (valid_action? :refund, collection_presenter.resource_name) && resource.may_refund? %>
-          <td><%= link_to("取回",
+          <td><%= link_to("領取獎金",
           refund_admin_bet_path(resource),
           method: :post,
           class: "text-color-red",

@@ -15,5 +15,9 @@ module Admin
     # def find_resource(param)
     #   Bet.find_by!(slug: param)
     # end
+    def destroy_all
+      Deposit.destroy_all
+      redirect_to admin_deposits_path
+    end
   end
 end

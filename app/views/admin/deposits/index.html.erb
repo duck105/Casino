@@ -49,6 +49,7 @@ It renders the `_table` partial to display details about the resources.
       [:new, namespace, page.resource_path],
       class: "button",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>
+    <%= link_to "全部清除", destroy_all_admin_deposits_path, method: :delete, class: "button", data: {confirm: "確定清除全部存款資料嘛?"} %>
   </div>
 </header>
 

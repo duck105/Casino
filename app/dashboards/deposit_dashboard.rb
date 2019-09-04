@@ -10,8 +10,9 @@ class DepositDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    team: Field::String,
-    money: Field::Number,
+    team: Field::Select.with_options(collection: ['ㄧ小', '二小', '三小', '四小', '五小', '六小', '七小', '八小', '九小', '十小', '其他']),
+    money: Field::String,
+    total: TotalField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,9 +24,10 @@ class DepositDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
     :team,
+    :name,
     :money,
+    :total,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +37,7 @@ class DepositDashboard < Administrate::BaseDashboard
     :name,
     :team,
     :money,
+    :total,
     :created_at,
     :updated_at,
   ].freeze
@@ -45,7 +48,7 @@ class DepositDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :team,
     :name,
-    :money,
+    :money
   ].freeze
 
   # Overwrite this method to customize how bets are displayed

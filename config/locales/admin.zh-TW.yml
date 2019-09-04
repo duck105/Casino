@@ -17,12 +17,14 @@ zh-TW:
         team: 小隊
         money: 下注金額
         aasm_state: 狀態
+        price: 獎金
         created_at: 創建時間
         updated_at: 更新時間
       deposit:
         name: 姓名
         team: 小隊
         money: 本金
+        total: 本金+利息
         created_at: 創建時間
         updated_at: 更新時間
       setting:

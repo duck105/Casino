@@ -9,12 +9,15 @@ module Admin
     #     page(params[:page]).
     #     per(10)
     # end
+
     def scoped_resource
-     if params[:win]
-       resource_class.where(participant_id: params[:win]).ongoing
-     else
-       resource_class.ongoing
-     end
+      if params[:aasm_state]
+        resource_class.where(aasm_state: params[:aasm_state]).ongoing
+      elsif params[:win]
+        resource_class.where(participant_id: params[:win]).ongoing
+      else
+        resource_class.ongoing
+      end
     end
 
     # Define a custom finder by overriding the `find_resource` method:
@@ -29,7 +32,7 @@ module Admin
       else
         flash[:alert] = "操作不允許"
       end
-      redirect_to admin_bets_path
+      redirect_back(fallback_location: root_path)
     end
 
     def refund
@@ -39,6 +42,11 @@ module Admin
       else
         flash[:alert] = "操作不允許"
       end
+      redirect_back(fallback_location: root_path)
+    end
+
+    def destroy_all
+      Bet.destroy_all
       redirect_to admin_bets_path
     end
   end

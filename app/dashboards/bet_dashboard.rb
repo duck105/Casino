@@ -8,11 +8,15 @@ class BetDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    participant: Field::BelongsTo,
+    participant: Field::BelongsTo.with_options(
+      searchable: true,
+      searchable_field: 'name',
+    ),
     id: Field::Number,
     name: Field::String,
     team: Field::String,
-    money: Field::Number,
+    money: Field::String,
+    price: PriceField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     aasm_state: Field::String,
@@ -26,10 +30,11 @@ class BetDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :participant,
-    :name,
     :team,
+    :name,
     :money,
     :aasm_state,
+    :price,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,6 +45,7 @@ class BetDashboard < Administrate::BaseDashboard
     :name,
     :team,
     :money,
+    :price,
     :created_at,
     :updated_at,
     :aasm_state,
