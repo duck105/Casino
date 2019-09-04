@@ -2,6 +2,7 @@ require "administrate/field/base"
 
 class TotalField < Administrate::Field::Base
   def to_s
-    "#{(resource.count_interest + resource.money).floor} 元"
+    rate = Setting.find_by(:key => "interest_rate").value.to_i
+    "#{(resource.count_interest(rate) + resource.money).floor} 元"
   end
 end
