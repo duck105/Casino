@@ -10,7 +10,7 @@ class BetsController < ApplicationController
       flash[:notice] = "下注成功，請至櫃檯付款！"
       redirect_to root_path
     else
-      flash[:alert] = @bet.errors.messages.first
+      flash[:alert] = @bet.errors.full_messages.to_sentence
       render :new
     end
   end

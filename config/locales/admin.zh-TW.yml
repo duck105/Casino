@@ -1,0 +1,28 @@
+zh-TW: 
+  helpers:
+    select:
+      prompt: 請選擇
+    submit:
+      create: 新增
+      submit: 儲存
+      update: 更新
+    label:
+      participant:
+        name: 姓名
+        created_at: 創建時間
+        updated_at: 更新時間
+      bet:
+        participant: 下注對象
+        name: 姓名
+        team: 小隊
+        money: 下注金額
+        aasm_state: 狀態
+        created_at: 創建時間
+        updated_at: 更新時間
+      deposit:
+        name: 姓名
+        team: 小隊
+        money: 本金
+        created_at: 創建時間
+        updated_at: 更新時間
+      setting:

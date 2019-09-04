@@ -1,8 +1,9 @@
 <div class="container records">
   <%= link_to("返回", participants_path, class: "btn btn-warning")%>
+  <%= link_to "下注", new_bet_path(:participant_id => @participant.id), class: "btn btn-primary  pull-right" %>
   <br>
   <br>
-  <h1 class="h2 mb-3"># <%= @participant.id %> <%= @participant.name %> - 下注</h1>
+  <h1 class="h2 mb-3">No. <%= @participant.id %> <%= @participant.name %> - 下注情況</h1>
   <br>
   <div class="table-responsive">
     <table class="table">

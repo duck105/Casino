@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'execjs'
 # gem 'therubyracer'
 gem 'mini_racer', platforms: :ruby
-gem 'administrate', '~> 0.10.0'
+gem 'administrate', '~> 0.11.0'
 gem 'awesome_rails_console'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'aasm'
@@ -25,6 +25,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Framework
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'rails-i18n', '~> 5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

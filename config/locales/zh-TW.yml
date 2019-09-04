@@ -1,0 +1,29 @@
+zh-TW:
+  activerecord:
+    models:
+      participant: 參賽者
+      bet: 下注
+      deposit: 存款
+      setting: 設定
+    attributes:
+      participant:
+        name: 姓名
+        created_at: 創建時間
+        updated_at: 更新時間
+      bet:
+        participant: 下注對象
+        name: 姓名
+        team: 小隊
+        money: 下注金額
+        aasm_state: 狀態
+        created_at: 創建時間
+        updated_at: 更新時間
+      deposit:
+        name: 姓名
+        team: 小隊
+        money: 本金
+        created_at: 創建時間
+        updated_at: 更新時間
+      setting:
+
+
