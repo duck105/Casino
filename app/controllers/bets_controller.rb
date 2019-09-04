@@ -7,9 +7,10 @@ class BetsController < ApplicationController
   def create
     @bet = Bet.new(bet_params)
     if @bet.save
+      flash[:notice] = "下注成功，請至櫃檯付款！"
       redirect_to root_path
     else
-      flash[:notice] = errors.message
+      flash[:alert] = @bet.errors.messages.first
       render :new
     end
   end

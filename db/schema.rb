@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_103109) do
+ActiveRecord::Schema.define(version: 2019_07_20_103035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,20 @@ ActiveRecord::Schema.define(version: 2019_07_19_103109) do
   create_table "bets", force: :cascade do |t|
     t.string "name"
     t.string "team"
-    t.integer "money"
+    t.bigint "money"
     t.bigint "participant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "aasm_state"
     t.index ["participant_id"], name: "index_bets_on_participant_id"
+  end
+
+  create_table "deposits", force: :cascade do |t|
+    t.string "name"
+    t.string "team"
+    t.bigint "money"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "participants", force: :cascade do |t|
