@@ -79,13 +79,13 @@ to display a collection of resources in an HTML table.
           method: :post,
         ) %></td>
         <% end %>
-        <% confirm_message = "確認是#{resource.participant.name}贏？領取獎金#{resource.participant.expected_profit(resource.money)}元" %>
+        
         <% if (valid_action? :refund, collection_presenter.resource_name) && resource.may_refund? %>
           <td><%= link_to("領取獎金",
           refund_admin_bet_path(resource),
           method: :post,
           class: "text-color-red",
-          :data => {:confirm => confirm_message}
+          :data => {:confirm => render_confirm_message(resource)}
         ) %></td>
         <% end %>
       </tr>

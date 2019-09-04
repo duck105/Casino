@@ -52,7 +52,7 @@ It renders the `_table` partial to display details about the resources.
     <%= link_to("尚未付款", admin_bets_path(:aasm_state => "created"), class: "button") %>
   </div>
 <!--   <%= form_tag(admin_bets_path, method: :get, html: { class: "form" }) do %>
-    <%= select_tag('win', options_for_select(@participants.collect{ |u| ["No. #{u.id} #{u.name}", u.id] }), {include_blank:'選擇冠軍', onchange: "this.form.submit();", style: "height=40px"})%>
+    <%= select_tag('win', options_for_select(render_participant_options), {include_blank:'選擇冠軍', onchange: "this.form.submit();", style: "height=40px"})%>
   <% end %> -->
   
 </header>
