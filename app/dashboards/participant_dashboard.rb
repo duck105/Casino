@@ -47,6 +47,6 @@ class ParticipantDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(participant)
-    "No.#{participant.id} #{participant.name}"
+    participant.name
   end
 end
