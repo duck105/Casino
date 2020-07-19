@@ -1,25 +1,51 @@
-# README
+CSIE Casino 使用說明
+===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+網址: https://csie-casino.herokuapp.com/
+Github: https://github.com/duck105/casino
+## 首頁
 
-Things you may want to cover:
+![](https://i.imgur.com/pzL1bgC.png)
 
-* Ruby version
 
-* System dependencies
+- ID: the id in the database.
+- "下注總額": 該隻賽馬的 **已付款** 下注 金額總和
+- "期望獲利": 如果該賽馬獲勝，每下注1000元可得到的獎金
+- "下注": 填寫小隊, 姓名&金額來 下注
+- "詳細": 該賽馬所有 **已付款** 下注的詳細資料
 
-* Configuration
+## 後台
 
-* Database creation
+![](https://i.imgur.com/Nx35lsX.png)
 
-* Database initialization
 
-* How to run the test suite
+### 網址: 
 
-* Services (job queues, cache servers, search engines, etc.)
+- https://csie-casino.herokuapp.com/admin(後面加上 /admin)
 
-* Deployment instructions
+### 設定
 
-* ...
-# casino
+- casino_name: 按編輯設定網站首頁title 
+- interest_rate: 按編輯更新銀行利率(每分鐘, 單利計算), i.e. 0.1代表10%，利息= 本金* 0.1 * 分鐘數
+
+### 參賽者
+
+- 賽馬資料，按新增填入賽馬姓名
+
+### 下注: 
+
+- 查看所有下注狀況
+- 客人在首頁填完資料後，該筆資料狀態會是"created"，代表還未付款
+- 付完款後工作人員點選 **付款**，狀態就會成為"paid"
+- 領完獎金後工作人員點選 **領取獎金**，該筆資料就會消失在頁面中
+- 結果出來後，**搜尋欄**位填入冠軍的姓名 即可filter出所有還未領獎的中獎下注
+- "尚未付款": 點選後就會filter出所有還未付款的下注
+- "刪除全部": 把所有的下注資料都刪掉
+
+### 存款
+
+- 按新增即可新增紀錄，須由工作人員填入小隊員小隊, 姓名&金額
+- 每次重新整理就會用當前時間來計算本金+利息
+- 當客人領回錢之後按刪除即可
+- **銀行破產**就按刪除全部
+
