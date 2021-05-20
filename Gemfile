@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'execjs'
 # gem 'therubyracer'
 gem 'mini_racer', platforms: :ruby
-gem 'administrate', '~> 0.11.0'
+gem 'administrate', '~> 0.13.0'
 gem 'awesome_rails_console'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'aasm'
